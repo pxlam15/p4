@@ -23,7 +23,9 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'task_table',
+			'database'  => 'taskstable',
+			'database'  => 'userstable',
+			'database'  => 'usertasktable',
 			'username'  => 'root',
 			'password'  => '',
 			'charset'   => 'utf8',

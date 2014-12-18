@@ -17,17 +17,31 @@ Route::get('/', function()
 	return View::make('index');
 });
 
-Route::get('/home', function()
-{
-	#User Home Page
-	return View::make('user-home');
-});
+Route::get('/create', 'UserController@preCreate');
+Route::post('/create', 'UserController@postCreate');
 
 
-Route::post('/create', function()
-{
-	return View::make('hello');
-});
+/*
+Route::get('/signup','UserController@getSignup' );
+Route::get('/login', 'UserController@getLogin' );
+Route::post('/signup', 'UserController@postSignup' );
+Route::post('/login', 'UserController@postLogin' );
+Route::get('/logout', 'UserController@getLogout' );
+/**
+* Book
+* (Explicit Routing)
+
+Route::get('/user', 'UserController@getIndex');
+Route::get('/user/editTask/{id}', 'UserController@getEdit');
+Route::post('/user/editTask', 'UserController@postEdit');
+Route::get('/user/createTask', 'UserController@getCreate');
+Route::post('/user/createTask', 'UserController@postCreate');
+Route::post('/user/deleteTask', 'UserController@postDelete');
+Route::get('/user/viewAllTasks', 'UserController@listAll');
+*/
+
+/*
+Route::post('/create', 'TaskController@createTask');
 
 Route::post('/edit', function()
 {
@@ -35,17 +49,12 @@ Route::post('/edit', function()
 });
 
 Route::get('/completed', 'TaskController@showCompleted');
-
 Route::get('/todo', 'TaskController@showToDo');
-
 Route::get('/view_all', 'TaskController@listAll');
-
-Route::get('/sign-up', 'UserController@preSignup');
-
 Route::get('/log-in', 'UserController@preLogin');
-
+Route::get('/sign-up', 'UserController@preSignup');
 Route::get('/sign-up-validating', 'UserController@postSignup');
-
+*/
 /*
 Route::get('mysql-test', function() {
 

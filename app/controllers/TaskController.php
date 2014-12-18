@@ -12,12 +12,28 @@ class TaskController extends BaseController{
 		
 		$task->increments('id');
 		#title is user input of their "todo"
-		$task->title = '';
+		$task->title = input::get('title');
 		#$task->dateCreated = '';
 		#$task->dateDue = '';
 		$task->save();
 
-		return View::make('hello');
+		return View::make('user-home');
+	}
+
+	public function postCreateTask(){
+		# Instantiate the book model
+		$task = new Task();
+		$task->fill(Input::except('tasks'));
+		# Note this save happens before we enter any tags (next step)
+		$book->save();
+
+		foreach(Input::get('tags') as $tag) {
+		# This enters a new row in the book_tag table
+			$book->tags()->save(Tag::find($tag));
+		}
+		return Redirect::action('BookController@getIndex')->with('flash_message','Your book has been added.');	
+
+		
 	}
 
 	public function listAll(){

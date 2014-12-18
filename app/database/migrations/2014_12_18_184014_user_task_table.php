@@ -3,13 +3,8 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUserTaskTable extends Migration {
+class UserTaskTable extends Migration {
 
-	/**
-	 * Run the migrations.
-	 *
-	 * @return void
-	 */
 	public function up()
 	{
 		#pivot table creation and generation of fk
@@ -31,6 +26,6 @@ class CreateUserTaskTable extends Migration {
 	public function down()
 	{
 		Schema::drop('users_task');
-	}
+	} 
 
 }

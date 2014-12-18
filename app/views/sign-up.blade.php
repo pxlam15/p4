@@ -4,15 +4,19 @@
 	To Do Checklist
 @stop
 
+
 @section('content')
-	<link rel='stylesheet' href='/css/style 1.0.css' type='text/css'>
-	<form method = "POST" action = "/sign-up">
+	<h1>Sign up</h1>
 
-		<label for='userName'> Username </label>
-		<input type='text' name='userName'/> <br>
+	{{ Form::open(array('url' => '/signup')) }}
 
-		<label for='password'> Password </label>
-		<input type='password' name='password'/> <br>
+	    Email<br>
+	    {{ Form::text('email') }}<br><br>
 
-		<input type = "Submit">
+	    Password:<br>
+	    {{ Form::password('password') }}<br><br>
+
+	    {{ Form::submit('Submit') }}
+
+	{{ Form::close() }}
 @stop

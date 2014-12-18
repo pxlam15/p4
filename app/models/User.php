@@ -28,4 +28,21 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 		return $this->belongsToMany('Task');
 	}
 
+	 public function updateTasks($new = array()) {
+
+		foreach($new as $task) {
+			if(!$this->tasks->contains($task)) {
+				$this->tasks()->save(Tag::find($task));
+			}
+		}
+
+		foreach($this->tasks as $task) {
+			if(!in_array($task->pivot->task_id,$new)) {
+				$this->tasks()->detach($task->id);
+			}
+		}
+	}
+
+	
+
 }

@@ -3,10 +3,10 @@
 class Task extends Eloquent{
 		
 	public function user(){
-		return $this->belongsToMany('User');
+		return $this->belongsTo('User');
 	}
 
-	public static function getTaskID(){
+	public static function getIDNamePair(){
 		$tasks = Array();
 
 		$collection = Task::all();
