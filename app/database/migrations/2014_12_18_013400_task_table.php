@@ -21,7 +21,8 @@ class TaskTable extends Migration {
 			$table -> date('dateCreated');
 			$table -> date('dateDue');
 			$table -> string('title');
-			$table -> boolean('status');
+			#$table -> boolean('status');
+			$table -> int('status');
 
 		});
 

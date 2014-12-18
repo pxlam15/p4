@@ -13,10 +13,28 @@
 
 Route::get('/', function()
 {
+	#Home Page Here
 	return View::make('hello');
 });
 
 
+Route::post('/create', function()
+{
+	return View::make('hello');
+});
+
+Route::post('/edit', function()
+{
+	return View::make('hello');
+});
+
+Route::get('/completed', 'TaskController@completed');
+
+Route::get('/todo', 'TaskController@toDo');
+
+Route::get('/view_all', 'TaskController@listAll');
+
+/*
 Route::get('mysql-test', function() {
 
     # Print environment
@@ -29,4 +47,4 @@ Route::get('mysql-test', function() {
     print_r($results);
 
 });
-
+*/
