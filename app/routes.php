@@ -17,55 +17,15 @@ Route::get('/', function()
 	return View::make('index');
 });
 
+#create new tasks
 Route::get('/create', 'UserController@preCreate');
 Route::post('/create', 'UserController@postCreate');
 
+#read completed tasks
+Route::get('/list', 'UserController@readAll');
+Route::get('/list/complete', 'UserController@readCompletedTask');
+Route::get('/list/incomplete', 'UserController@readIncompleteTask');
 
-/*
-Route::get('/signup','UserController@getSignup' );
-Route::get('/login', 'UserController@getLogin' );
-Route::post('/signup', 'UserController@postSignup' );
-Route::post('/login', 'UserController@postLogin' );
-Route::get('/logout', 'UserController@getLogout' );
-/**
-* Book
-* (Explicit Routing)
-
-Route::get('/user', 'UserController@getIndex');
-Route::get('/user/editTask/{id}', 'UserController@getEdit');
-Route::post('/user/editTask', 'UserController@postEdit');
-Route::get('/user/createTask', 'UserController@getCreate');
-Route::post('/user/createTask', 'UserController@postCreate');
-Route::post('/user/deleteTask', 'UserController@postDelete');
-Route::get('/user/viewAllTasks', 'UserController@listAll');
-*/
-
-/*
-Route::post('/create', 'TaskController@createTask');
-
-Route::post('/edit', function()
-{
-	return View::make('hello');
-});
-
-Route::get('/completed', 'TaskController@showCompleted');
-Route::get('/todo', 'TaskController@showToDo');
-Route::get('/view_all', 'TaskController@listAll');
-Route::get('/log-in', 'UserController@preLogin');
-Route::get('/sign-up', 'UserController@preSignup');
-Route::get('/sign-up-validating', 'UserController@postSignup');
-*/
-/*
-Route::get('mysql-test', function() {
-
-    # Print environment
-    echo 'Environment: '.App::environment().'<br>';
-
-    # Use the DB component to select all the databases
-    $results = DB::select('SHOW DATABASES;');
-
-    # If the "Pre" package is not installed, you should output using print_r instead
-    print_r($results);
-
-});
-*/
+#edit and delete
+Route::get('/edit_task', 'UserController@editTask');
+Route::get('/delete_task', 'UserController@deleteTask');

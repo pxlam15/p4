@@ -3,7 +3,7 @@
 class Task extends Eloquent{
 		
 	public function user(){
-		return $this->belongsTo('User');
+		return $this->belongsToMany('User');
 	}
 
 	public static function getIDNamePair(){

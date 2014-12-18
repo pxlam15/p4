@@ -5,8 +5,12 @@ class TaskController extends BaseController{
 	public function __construct() {
 		parent::__construct();
 		$this->beforeFilter('auth');
-	}
+	}	
 
+}
+
+
+/*
 	public function createTask(){
 		$task = new Task();
 		
@@ -68,23 +72,4 @@ class TaskController extends BaseController{
 			echo $task->title.'<br>';
 		}
 	}
-
-	public function edit(){
-		try {
-			$tag = Tag::findOrFail($id);
-		}
-		catch(Exception $e) {
-			return Redirect::to('/tag')->with('flash_message', 'Tag not found');
-		}
-
-		$tag->name = Input::get('name');
-		$tag->save();
-
-		return Redirect::action('TaskController@listAll')->with('flash_message','Your tag has been saved.');
-	}
-
-	public function delete(){
-
-	}
-
-}
+*/

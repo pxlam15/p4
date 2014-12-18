@@ -23,8 +23,8 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'taskstable',
-			'database'  => 'userstable',
+			//'database'  => 'taskstable',
+			//'database'  => 'userstable',
 			'database'  => 'usertasktable',
 			'username'  => 'root',
 			'password'  => '',
