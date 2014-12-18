@@ -13,8 +13,14 @@
 
 Route::get('/', function()
 {
-	#Home Page Here
-	return View::make('hello');
+	#Home Page Here/Sign In/Log In Page
+	return View::make('index');
+});
+
+Route::get('/home', function()
+{
+	#User Home Page
+	return View::make('user-home');
 });
 
 
@@ -28,11 +34,17 @@ Route::post('/edit', function()
 	return View::make('hello');
 });
 
-Route::get('/completed', 'TaskController@completed');
+Route::get('/completed', 'TaskController@showCompleted');
 
-Route::get('/todo', 'TaskController@toDo');
+Route::get('/todo', 'TaskController@showToDo');
 
 Route::get('/view_all', 'TaskController@listAll');
+
+Route::get('/sign-up', 'UserController@preSignup');
+
+Route::get('/log-in', 'UserController@preLogin');
+
+Route::get('/sign-up-validating', 'UserController@postSignup');
 
 /*
 Route::get('mysql-test', function() {
